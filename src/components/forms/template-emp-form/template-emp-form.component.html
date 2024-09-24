@@ -26,7 +26,8 @@
                     id="validationCustom02" required maxlength="5" #lname="ngModel">
                 <div class="text-danger">
                     @if(lname.touched && lname.errors?.['required']){
-                    <span>This field is required</span>
+                    <!-- <span>This field is required</span> -->
+                    <span>{{validationMsg.REQUIRED}}</span>
                     }@else if(lname.touched && lname.errors?.['maxlength']){
                     <span>Maximum length not more than 5 character!!!</span>
                     }
