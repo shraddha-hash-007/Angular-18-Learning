@@ -1,7 +1,5 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
   <div class="container-fluid">
-    <!-- Links -->
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" routerLink="add-emp">Add Emp</a>
@@ -9,39 +7,40 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="emp-details">Emp Detail</a>
       </li>
-
       <li class="nav-item">
         <a class="nav-link" routerLink="data-binding">Data Binding</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="if-directive">strutural Directive</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Directive</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="if-directive">strutural Directive</a></li>
+          <li><a class="dropdown-item" routerLink="attribute-directive">Attribute Directive</a></li>
+        </ul>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="attribute-directive">Attribute Directive</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="cf-ng-if"><span>&#64;</span> if/else</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="cf-for"><span>&#64;</span>For</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Conditional Flow</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="cf-ng-if"><span>&#64;</span>if/else</a></li>
+          <li><a class="dropdown-item" routerLink="cf-for"><span>&#64;</span>for</a></li>
+        </ul>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="pipe">Pipe</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="tForm">TForm</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Form</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="tForm">TForm</a></li>
+          <li><a class="dropdown-item" routerLink="rForm">RForm</a></li>
+        </ul>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="rForm">RForm</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="getAPI">getAPI-Integration</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="postAPI">postAPI-Integration</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="apiCallWithService">Service-API-Integration</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">API Integraion</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="getAPI">get-API</a></li>
+          <li><a class="dropdown-item" routerLink="postAPI">post-API</a></li>
+          <li><a class="dropdown-item" routerLink="apiCallWithService">API call with Service</a></li>
+        </ul>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="lifeCycle">LifeCycle</a>
