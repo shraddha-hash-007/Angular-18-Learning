@@ -18,6 +18,7 @@ import { NgContainerComponent } from '../components/ng-container/ng-container/ng
 import { ViewChildComponent } from '../components/view-child/view-child/view-child.component';
 import { LoginComponent } from '../components/login/login.component';
 import { MainLayoutComponent } from '../components/main-layout/main-layout.component';
+import { authGuard } from '../components/service/auth.guard';
 
 export const routes: Routes = [
     {
@@ -43,7 +44,8 @@ export const routes: Routes = [
             },
             {
                 path: 'data-binding',
-                component: DataBindingComponent
+                component: DataBindingComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'if-directive',
