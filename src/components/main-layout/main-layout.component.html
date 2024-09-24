@@ -58,10 +58,14 @@
         </ul>
     </div>
     <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Logout" name="logout">
         <button class="btn btn-danger" type="button" (click)="OnLogoff()">Logout</button>
     </form>
 </nav>
+<div class="row">
+    <p class="bg-info text-white text-center p-3">{{loginUserData.emailId}} <span
+            class="text-black"><b>{{loginUserData.userId}}</b></span></p>
+
+</div>
 <div class="container text-center">
     <router-outlet></router-outlet>
 </div>

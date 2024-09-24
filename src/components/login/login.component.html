@@ -10,19 +10,22 @@
 
             <div class="input-box">
                 <div class="inputs">
-                    <input type="username" placeholder="Enter your username" required name="username"
-                        [(ngModel)]="userObj.username">
+                    <input type="EmailId" placeholder="Enter your username" required name="EmailId"
+                        [(ngModel)]="userObj.EmailId">
                     <div class="underline-input"></div>
                 </div>
 
                 <div class="inputs">
-                    <input type="password" placeholder="Enter your Password" required name="password"
-                        [(ngModel)]="userObj.password">
+                    <input type="Password" placeholder="Enter your Password" required name="Password"
+                        [(ngModel)]="userObj.Password">
                     <div class="underline-input"></div>
                 </div>
 
                 <div class="submit-button">
                     <button class=" btn btn-primary text-center" (click)="onLogin()">Login</button>
+                </div>
+                <div class="submit-button">
+                    <button class=" btn btn-primary text-center" (click)="onLoginWithApi()">Login with API</button>
                 </div>
             </div>
 

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,10 +12,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   userObj: any = {
-    username: '',
-    password: '',
+    EmailId: '',
+    Password: '',
   }
   router = inject(Router);
+  http = inject(HttpClient);
+  // Added login method with API, username: nitian.shraddha@gmail.com password: admin
+  onLoginWithApi() {
+    this.http.post("https://projectapi.gerasim.in/api/UserApp/login", this.userObj).subscribe((res: any) => {
+      if (res.result) {
+        console.log(res);
+        localStorage.setItem('loginUser', JSON.stringify(res.data));
+        this.router.navigateByUrl('rForm');
+      }
+
+    })
+  }
   onLogin() {
     if (this.userObj.username == 'admin' && this.userObj.password == 1234) {
       localStorage.setItem('loginUser', this.userObj.username);
