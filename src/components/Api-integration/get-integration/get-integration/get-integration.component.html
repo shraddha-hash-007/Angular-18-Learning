@@ -1,0 +1,38 @@
+<div class="p-3 my-2 bg-secondary text-center text-white">
+    <h1>API Integration</h1>
+    <p>Get API - provideHttpClient()</p>
+    <p>https://jsonplaceholder.typicode.com/users/</p>
+    <p>https://projectapi.gerasim.in/api/RealEstate/GetAllCustomers</p> <span>4209 port --> ng s --port 4209</span>
+</div>
+<div class="row">
+    <p>generic Button:: <app-gbutton [btnText]="'Succes Button'" [btnClass]="'btn btn-danger'"></app-gbutton></p>
+</div>
+<app-resuable-item [alertMessage]="'Data save SuccessFully!!!'" [alertType]="'Success'"></app-resuable-item>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-primary text-center" (click)="getUserData()">
+            Get API
+        </button>
+    </div>
+    <div class="col-3 mx-2">
+        <button class="btn-success text-center btn" (click)="getCustomerData()">Get Customer API</button>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-3">
+        <div class="text-center">
+            <ul>
+                <li *ngFor="let user of userData">{{user.name}} , {{user.address.street}}</li>
+            </ul>
+        </div>
+        <select name="address" id="address">
+            <option *ngFor="let user of userData"> {{user.name}}</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <select name="" id="">
+            <option value="" *ngFor="let user of customerData">{{user.userId}} {{user.userName}}</option>
+        </select>
+    </div>
+</div>

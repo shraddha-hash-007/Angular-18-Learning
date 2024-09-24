@@ -1,0 +1,13 @@
+.yo {
+    background: yellow;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+}
+
+.oops {
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    border: 2px solid black;
+}

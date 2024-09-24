@@ -1,0 +1,46 @@
+<div class="bg-success p-3 text-center text-white">
+    <h1>Post Integration with the help of SERVICE -</h1>
+    <p>Service is used for using resuable code, it can be normal method it can http methods </p>
+</div>
+
+<div class="row">
+    <table class="table table-dark table-striped">
+        <thead>
+            <th>s no.</th>
+            <th>Department name</th>
+            <th>Department Logo</th>
+            <th>Action</th>
+            <th>Remove</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of departmentData; let i = index">
+                <td>{{i +1}}</td>
+                <td>{{data.departmentName}}</td>
+                <td>{{data.departmentLogo}}</td>
+                <td><button class="btn btn-success" (click)="onEdit(data)">Edit</button></td>
+                <td><button class="btn btn-danger" (click)="onDelete(data.departmentId)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col-5">
+        <form action="">
+            <label for="departmentName" class="form-label">Department Name</label>
+            <input type="text" name="departmentName" class="form-control" [(ngModel)]="departmentObj.departmentName"
+                required>
+            <label for="departmentLogo" class="form-label">Department Logo Image</label>
+            <input type="text" class="form-control" name="departmentLogo" [(ngModel)]="departmentObj.departmentLogo"
+                required>
+        </form>
+        @if(departmentObj.departmentId == 0) {
+        <button class="btn btn-primary" (click)="saveData()">Save Data</button>
+        }
+        @else {
+        <button class="btn btn-danger" (click)="onUpdate()">Update Data</button>
+        }
+
+
+    </div>
+    <button class="btn btn-success text-center" (click)="getData()">Get Data</button>
+</div>

@@ -1,0 +1,37 @@
+<p>data-binding works!</p>
+<h2>Data Binding: Data binding in angular is a mechanism that allow automatically synchronization between model and view
+    , enablind dynamic update in UI </h2>
+<ul>
+    <li>One Way Data Binding
+        - interpolation "" - from ts to html
+        - Property Binding -
+        - Event Binding - html to ts
+    </li>
+    <li>Two way Data Binding - from html to ts and ts to html
+        - ngModel [(ngModel)]
+    </li>
+    <li>signal</li>
+</ul>
+@if(isLoggedIn) {
+<div>Shraddha u are login as admin user</div>
+}
+@else {
+<div>try another account</div>
+}
+<div *ngIf="isLoggedIn">
+    U are not authorize user !! please login to valid account
+</div>
+<h3>Demo</h3>
+<p>-- Interpolation <code>{{firstName}}</code> :: {{courseName}}</p>
+<p>--Property Binding <code>[]</code></p>
+<input type="text" [name]="firstName" [value]="firstName" id="name" />
+<input [type]="inputType" value="yes" />
+<p>--Event Binding - on click of button we will change the the course name:;</p>
+<h2>{{courseName}}</h2>
+<button type="button" (click)="courseNameChange()">Course</button>
+<p>--Two way databinding using ngModel</p>
+<h5>{{firstName}}</h5>
+<input type="text" name="" id="" [(ngModel)]="firstName" />
+<p>Signal - new data binding method introduce in Angular 17</p>
+<p>Email is :: {{signalEmail()}} </p>
+<button (click)="changeEmail()">change email address</button>

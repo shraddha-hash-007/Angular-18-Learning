@@ -1,0 +1,67 @@
+<div class="p-3 text-center text-white bg-success rounded">
+    <h1>ng-container: Consider this as a imaginery "div"</h1>
+    <p>ngTemplateOutlet, in real senario , ng-container we will use to show the loader..</p>
+</div>
+<ng-container *ngIf="isShowDiv">
+    <p class="bg-info text-white">I will show up when isShowDiv will become true..</p>
+</ng-container>
+<button class="btn btn-secondary my-2" (click)="getMainApi()">Get user detail</button>
+<div class="row">
+    <div class="col-6">
+        <table class="table border bg-dark text-white">
+            <thead>
+                <th>Name</th>
+                <th>UserName</th>
+                <th>Email</th>
+            </thead>
+            <tbody>
+                <ng-container *ngIf="isApiLoaded">
+                    <tr>
+                        <td colspan="3">
+                            <div class="spinner-grow text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow text-secondary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow text-success" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow text-danger" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow text-warning" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow text-info" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow text-light" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow text-dark" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-container>
+                <ng-container *ngIf="!isApiLoaded">
+                    <tr *ngFor="let user of userDetail">
+                        <td>{{user.name}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.email}}</td>
+                    </tr>
+                </ng-container>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <ng-container *ngTemplateOutlet="myTemp">
+
+    </ng-container>
+</div>
+<ng-template #myTemp>
+    <p class="bg-info text-white">Hello i am p from ng-template..!!!!!</p>
+</ng-template>

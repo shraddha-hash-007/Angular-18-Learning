@@ -1,0 +1,93 @@
+<div class="mt-2 p-3 bg-secondary text-white text-center rounded">
+    <h1>Attribute Directive</h1>
+    <p>ngClass,ngStyle</p>
+    <button class="btn btn-primary text-center" (click)="goToLink()">Go to structural Directive</button>
+</div>
+<div class="row pt-3">
+    <div class="col-3">
+        <div class="text-center p-3 text-white" [ngClass]="bgColor">
+            Div-1
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="text-center p-3 text-white" [ngClass]="isActive ? 'bg-success' : 'bg-warning'">
+            Div-2
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="text-center p-3" [ngClass]="name==fname? 'yo' : 'oops text-primary'">
+            Div-3
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="text-center p-3" [ngClass]="gender? 'text-black bg-warning' : 'text-white bg-primary'">
+            Div-4
+        </div>
+        <!-- <p [ngClass]="genderArr.includes('female') == 'female' ? 'bg-pink text-white' : 'bg-primary text-white'">
+            Shraddha</p> -->
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="redBg()">Red</button>
+        <button class="btn btn-success mx-2" (click)="blueBg()">Blue</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="toggleClass()">ToggleButton</button>
+    </div>
+    <div class="col-3">
+        <input type="text" name="name" id="name" [(ngModel)]="name">
+        <input type="text" name="fname" id="fname" [(ngModel)]="fname">
+    </div>
+    <div class="col-3">
+        <input type="checkbox" name="gender" id="gender" [(ngModel)]="gender" />
+        <select name="gender" id="genderArr" [(ngModel)]="genderArr">
+            <option value="gender" *ngFor="let gender of genderArr"> {{gender}}</option>
+        </select>
+    </div>
+
+</div>
+
+<div class="p-3 bg-primary rounded text-center">
+    <h1 class="center">[ngStyles]</h1>
+</div>
+<div class="row">
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Student</th>
+                <th>Total</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of studentList">
+                    <td>{{student.name}}</td>
+                    <td>{{student.age}}</td>
+                    <td [ngStyle]="{ 'background-color': student.isStudent  ? 'blue' : 'yellow' }">
+                        <span>
+                            {{student.isStudent == 'true' ? 'School Going' : 'Office Going'}}</span>
+                    </td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" width="20%" [ngStyle]="{'width': student.total+'%'}">
+                                {{student.total}}
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-5 text-center">
+        <div [ngStyle]=" StyleObj">
+            Hello Shraddhalorem23
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam rem eius sapiente aliquam earum. Quis
+            quaerat doloremque velit, voluptas vel quia fugit, alias ipsam voluptates sed id est amet magni nostrum quo
+            minus ratione vitae ducimus suscipit modi, adipisci rem. Temporibus illo earum ipsam.
+        </div>
+
+    </div>
+
+
+</div>

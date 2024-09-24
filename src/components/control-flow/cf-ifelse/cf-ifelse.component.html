@@ -1,0 +1,50 @@
+<div class="container p-3 text-center mt-3 bg-secondary text-white">
+    <h1>Control Flow - <span>&#64;</span>if, <span>&#64;</span>else</h1>
+</div>
+<div class="row pt-3">
+    @if(isShow) {
+    <div class="col-3">
+        <p class="bg-primary text-white text-center p-5">Div-1</p>
+    </div>
+    }
+
+    <div class="col-3">
+        @if(isShowDiv2){
+        <p class="bg-primary text-white text-center p-5">Div-2 - Success</p>
+        }
+        @else {
+        <p class="bg-danger text-white text-center p-5">Div-2 - Danger</p>
+        }
+    </div>
+    <div class="col-3">
+        @if(selectedGender == 'female'){
+        <p class="bg-primary text-white text-center p-5">Special Girl</p>
+        } @else if(selectedGender == 'male') {
+        <p class="bg-success text-white text-center p-5">Mamas Boy</p>
+        } @else if(selectedGender == 'other') {
+        <p class="bg-danger text-white text-center p-5">Other Zone</p>
+        } @else {
+        <p class="bg-primary text-white text-center p-5">Kindly select proper Gender</p>
+        }
+
+
+
+    </div>
+    <div class="col-3">
+        <p class="bg-primary text-white text-center p-5">Div-4</p>
+    </div>
+</div>
+<div class="row pt-3 bg-secondary">
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="showDiv()">show</button>
+        <button class="btn btn-primary mx-3" (click)="hideDiv()">Hide</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="toggleDiv()">Toggle</button>
+    </div>
+    <div class="col-3">
+        <select name="" id="" [(ngModel)]="selectedGender">
+            <option *ngFor="let gender of genderArr">{{gender}}</option>
+        </select>
+    </div>
+</div>

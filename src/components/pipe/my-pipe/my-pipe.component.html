@@ -1,0 +1,51 @@
+<div class="text-center bg-secondary">
+    <h1>Inbuild Pipe</h1>
+    <p>upperCase,lowerCase,currency,Date,titlePipe</p>
+</div>
+<div class="my-4 row">
+    <div class="col-3">
+        <p>Before Conversion Text: {{myText}}</p>
+        <br>
+        <p>After Conversion Text: <b>{{myText | uppercase}}</b> </p>
+    </div>
+    <div class="col-3">
+        <p>Before Conversion Text: {{myText}}</p>
+        <br>
+        <p>After Conversion Text: <b>{{myText | titlecase}}</b> </p>
+    </div>
+    <div class="col-3">
+        <p>Before Conversion Text: {{myText}}</p>
+        <br>
+        <p>After Conversion Text: <b>{{myText | lowercase}}</b> </p>
+    </div>
+</div>
+<div class="my-4 row">
+    <div class="col-3">
+        <p>Before Conversion Text: {{birthDate}}</p>
+        <br>
+        <p>After Conversion Text: <b>{{birthDate | date}}</b> </p>
+    </div>
+    <div class="col-3">
+        <p>Before Conversion Text: {{birthDate }}</p>
+        <br>
+        <p>After Conversion Text: <b>{{birthDate | date:'dd-mm-yy'}}</b> </p>
+    </div>
+    <div class="col-3">
+        <p>Before Conversion Text: {{birthDate}}</p>
+        <br>
+        <p>After Conversion Text: <b>{{birthDate | date:'dd-MMM-yy'}}</b> </p>
+    </div>
+</div>
+<div class="row my-4">
+    <div class="col-3 bg-primary">
+        <p class="text-white">json pipe is only for dev to check what property are there in object..</p>
+        {{empObj | json}}
+    </div>
+    <div class="col-3" *ngFor="let emp of empObj">
+        <p>{{emp.test}} {{emp.name}}</p>
+    </div>
+    <div class="col-3 bg-success">
+        {{currentTime | async | date:'hh:mm:ss'}}
+    </div>
+
+</div>

@@ -1,0 +1,38 @@
+<div class="p-3 text-center bg-secondary">
+    <h1>Control Flow statement</h1>
+    <p><span>&#64;for</span> <span>&#64;switch</span></p>
+</div>
+<div class="row">
+    <div class="col-3 text-center">
+        <ul>
+            @for(name of nameArr; track $index) {
+            <li>{{name}}</li>
+            }
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <h1>Switch</h1>
+    <label for="dayInput">Type number to show days:</label>
+    <input type="text" [(ngModel)]="dayInput" id="dayInput">
+    <div class="bg-success text-center my-3">
+        @switch(dayInput) {
+        @case ('1') {
+        <span>Monday</span>
+        }
+        @case ('2') {
+        <span>TuesDay</span>
+        }
+        @case ('3') {
+        <span>Wednesday</span>
+        }
+        @case('4') {
+        <span>Thursday</span>
+        }
+        @default {
+        <span>Default Case</span>
+        }
+        }
+    </div>
+
+</div>

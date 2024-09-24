@@ -1,0 +1,103 @@
+<h3>Directive:: A directive in Angular is simply an instruction to the DOM to modify or enhance an element's behavior or
+    appearance.</h3>
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Structual Directive</h1>
+    <p>*ngIf,*ngFor</p>
+    <button class="btn btn-primary" [routerLink]="['/attribute-directive']">Go to Attribute Directive</button>
+</div>
+<div class="row pt-3">
+    <div class="col-3" *ngIf="isShow">
+        <div class="bg-danger p-3 text-center">
+            <h1>Div-1</h1>
+        </div>
+    </div>
+    <div class="col-3" *ngIf="toggleShow">
+        <div class="bg-success p-3 text-center">
+            <h1>Div-2</h1>
+        </div>
+    </div>
+    <div class="col-3" *ngIf="num1 == num2">
+        <div class="bg-secondary p-3 text-center">
+            <h1>Div-3</h1>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="bg-primary p-3 text-center" *ngIf="isActive">
+            <h1>Div-4</h1>
+        </div>
+        <p *ngIf="selectedCountry == 'pak' " class="bg-success">{{selectedCountry}}</p>
+
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="showDiv()">Show</button>
+        <button class="btn btn-success mx-2" (click)=" hideDiv()">Hide</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="toggleHideShow()">Toggle btn</button>
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="num1" name="" id="" />
+        <input type="text" [(ngModel)]="num2" name="" id="">
+    </div>
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isActive" name="" id="">
+        <select [(ngModel)]="selectedCountry">
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="pak">Pakistan</option>
+            <option value="china">china</option>
+            <option value="japan">japan</option>
+            <option value="aus">Australia</option>
+        </select>
+    </div>
+</div>
+<div class="row pt-3">
+    <h3>*ngFor</h3>
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let city of cityArr">{{city}}</li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <select name="" id="">
+            <option value="city" *ngFor="let city of cityArr">{{city}}</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let emp of empDetailObj" class="bg-primary text-white">`The employee name is {{emp.name}} and
+                age is
+                {{emp.age}}`</li>
+        </ul>
+        <select name="" id="">
+            <option value="emp.empId" *ngFor="let emp of empDetailObj">{{emp.name}}</option>
+        </select>
+        <table class="table table-collapse table-bordered">
+            <thead>
+                <th>No.</th>
+                <th>empId</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>state</th>
+                <th>Working Status</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of empDetailObj; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{emp.empId}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.age}}</td>
+                    <td>{{emp.city}}</td>
+                    <td>{{emp.state}}</td>
+                    <td>
+                        <span *ngIf="emp.isWorking">Currently Working</span>
+                        <span *ngIf="!emp.isWorking">Currently NOT Working</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

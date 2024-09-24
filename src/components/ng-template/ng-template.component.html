@@ -1,0 +1,26 @@
+<div class="p-3 text-center bg-primary text-white">
+    <h1>ng-Template</h1>
+    <p>Its a way to wrap your UI in template, Unless u will render some where</p>
+</div>
+<div class="row">
+    <div class="col-3">
+        <div class="bg-success p-3 text-center text-white">Div-2</div>
+        <div *ngIf="isUserLogin;else notLogged" class="bg-danger text-white">
+            {{loginUserName}}</div>
+        <ng-template #notLogged>
+            <div class="bg-primary">Hello i am other div</div>
+        </ng-template>
+    </div>
+    <div class="col-4">
+        <ng-template #dyanamicTemplate>
+            <span class="text-black bg-primary">This is dynamic template</span>
+        </ng-template>
+    </div>
+    <div class="col-3">
+        <div #dynamicContainer>
+
+        </div>
+    </div>
+    <button class="btn btn-sm btn-success" (click)="onLoadTemplate()">Content Load</button>
+</div>
+<div>ng-Container is like imaginery div,</div>
