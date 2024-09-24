@@ -4,6 +4,7 @@ import { Component, inject, OnChanges, OnInit, SimpleChanges } from '@angular/co
 import { FormsModule } from '@angular/forms';
 import { ResuableItemComponent } from '../../../../ReusableComponent/resuable-item/resuable-item.component';
 import { GButtonComponent } from '../../../../ReusableComponent/button/gbutton/gbutton.component';
+import { IDepartment } from '../../../../model/interface/Idepartment';
 
 @Component({
   selector: 'app-post-integration',
@@ -18,7 +19,7 @@ export class PostIntegrationComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.getData();
   }
-  departmentData: any[] = [];
+  departmentData: IDepartment[] = [];
   departmentObj = {
 
     "departmentId": 0,

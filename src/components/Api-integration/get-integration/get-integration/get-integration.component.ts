@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ResuableItemComponent } from './../../../../ReusableComponent/resuable-item/resuable-item.component';
 import { GButtonComponent } from '../../../../ReusableComponent/button/gbutton/gbutton.component';
+import { ICustomer } from '../../../../model/interface/ICustomer';
 
 @Component({
   selector: 'app-get-integration',
@@ -14,7 +15,7 @@ import { GButtonComponent } from '../../../../ReusableComponent/button/gbutton/g
 export class GetIntegrationComponent {
   // http = inject(HttpClient); - Angular 16
   userData: any[] = [];
-  customerData: any[] = [];
+  customerData: ICustomer[] = [];
   constructor(private http: HttpClient) {
     this.getUserData();
     this.getCustomerData();
